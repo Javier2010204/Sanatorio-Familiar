@@ -1,0 +1,464 @@
+/* line 1, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+html {
+  height: 100%;
+}
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+/* line 5, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+body {
+  padding-top: 50px;
+  height: 100%;
+}
+
+/* line 11, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+body #new-detail-modal {
+  width: 700px;
+  margin-left: -350px;
+}
+
+/*
+ * Global add-ons
+ */
+/* line 20, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+.sub-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/*
+ * Top navigation
+ * Hide default border to remove 1px line.
+ */
+/* line 29, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+.navbar-fixed-top {
+  border: 0;
+}
+
+/*
+ * Sidebar
+ */
+/* line 36, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+body, html {
+  height: 100%;
+}
+
+/* line 40, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+nav.sidebar, .main {
+  -webkit-transition: margin 200ms ease-out;
+  transition: margin 200ms ease-out;
+}
+
+/* line 47, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+nav.sidebar {
+  position: fixed;
+  z-index: 1;
+  margin-top: 10px;
+}
+
+/* line 53, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+.main {
+  padding: 10px 10px 0 10px;
+}
+
+@media (min-width: 765px) {
+  /* line 59, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+  .main {
+    position: absolute;
+    width: calc(100% - 40px);
+    margin-left: 40px;
+    float: right;
+  }
+
+  /* line 66, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+  nav.sidebar:hover + .main {
+    margin-left: 200px;
+  }
+
+  /* line 70, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+  nav.sidebar.navbar.sidebar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+    margin-left: 0px;
+  }
+
+  /* line 74, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+  nav.sidebar .navbar-brand, nav.sidebar .navbar-header {
+    text-align: center;
+    width: 100%;
+    margin-left: 0px;
+  }
+
+  /* line 80, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+  nav.sidebar a {
+    padding-right: 13px;
+  }
+
+  /* line 84, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+  nav.sidebar .navbar-nav > li:first-child {
+    border-top: 1px #e5e5e5 solid;
+  }
+
+  /* line 88, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+  nav.sidebar .navbar-nav > li {
+    border-bottom: 1px #e5e5e5 solid;
+  }
+
+  /* line 92, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+  nav.sidebar .navbar-nav .open .dropdown-menu {
+    position: static;
+    float: none;
+    width: auto;
+    margin-top: 0;
+    background-color: transparent;
+    border: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  /* line 103, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+  nav.sidebar .navbar-collapse, nav.sidebar .container-fluid {
+    padding: 0 0px 0 0px;
+  }
+
+  /* line 107, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+  .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
+    color: #777;
+  }
+
+  /* line 111, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+  nav.sidebar {
+    width: 200px;
+    height: 100%;
+    margin-left: -160px;
+    float: left;
+    margin-bottom: 0px;
+  }
+
+  /* line 119, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+  nav.sidebar li {
+    width: 100%;
+  }
+
+  /* line 123, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+  nav.sidebar:hover {
+    margin-left: 0px;
+  }
+
+  /* line 127, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+  .forAnimate {
+    opacity: 0;
+  }
+}
+@media (min-width: 1330px) {
+  /* line 134, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+  .main {
+    width: calc(100% - 200px);
+    margin-left: 200px;
+  }
+
+  /* line 139, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+  nav.sidebar {
+    margin-left: 0px;
+    float: left;
+  }
+
+  /* line 144, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+  nav.sidebar .forAnimate {
+    opacity: 1;
+  }
+}
+/* line 149, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+nav.sidebar .navbar-nav .open .dropdown-menu > li > a:hover, nav.sidebar .navbar-nav .open .dropdown-menu > li > a:focus {
+  color: #CCC;
+  background-color: transparent;
+}
+
+/* line 154, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+nav:hover .forAnimate {
+  opacity: 1;
+}
+
+/* line 157, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+section {
+  padding-left: 15px;
+}
+
+/*
+ * Main content
+ */
+/*
+ * Placeholder dashboard ideas
+ */
+/* line 172, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+.placeholders {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* line 176, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+.placeholders h4 {
+  margin-bottom: 0;
+}
+
+/* line 179, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+.placeholder {
+  margin-bottom: 20px;
+}
+
+/* line 182, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+.placeholder img {
+  display: inline-block;
+  border-radius: 50%;
+}
+
+/* Style for typeahead.js */
+/* line 190, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+span.twitter-typeahead .tt-menu,
+span.twitter-typeahead .tt-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1050;
+  display: none;
+  float: left;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  list-style: none;
+  font-size: 14px;
+  text-align: left;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  background-clip: padding-box;
+}
+
+/* line 212, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+span.twitter-typeahead .tt-suggestion {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.42857143;
+  color: #333333;
+  white-space: nowrap;
+}
+
+/* line 221, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+span.twitter-typeahead .tt-suggestion.tt-cursor,
+span.twitter-typeahead .tt-suggestion:hover,
+span.twitter-typeahead .tt-suggestion:focus {
+  color: #ffffff;
+  text-decoration: none;
+  outline: 0;
+  background-color: #337ab7;
+}
+
+/* line 229, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+.input-group.input-group-lg span.twitter-typeahead .form-control {
+  height: 46px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  border-radius: 6px;
+}
+
+/* line 236, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+.input-group.input-group-sm span.twitter-typeahead .form-control {
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+
+/* line 243, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+span.twitter-typeahead {
+  width: 100%;
+}
+
+/* line 246, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+.input-group span.twitter-typeahead {
+  display: block !important;
+  height: 34px;
+}
+
+/* line 250, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+.input-group span.twitter-typeahead .tt-menu,
+.input-group span.twitter-typeahead .tt-dropdown-menu {
+  top: 32px !important;
+}
+
+/* line 254, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+.input-group span.twitter-typeahead:not(:first-child):not(:last-child) .form-control {
+  border-radius: 0;
+}
+
+/* line 257, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+.input-group span.twitter-typeahead:first-child .form-control {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* line 263, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+.input-group span.twitter-typeahead:last-child .form-control {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+/* line 269, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+.input-group.input-group-sm span.twitter-typeahead {
+  height: 30px;
+}
+
+/* line 272, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+.input-group.input-group-sm span.twitter-typeahead .tt-menu,
+.input-group.input-group-sm span.twitter-typeahead .tt-dropdown-menu {
+  top: 30px !important;
+}
+
+/* line 276, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+.input-group.input-group-lg span.twitter-typeahead {
+  height: 46px;
+}
+
+/* line 279, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+.input-group.input-group-lg span.twitter-typeahead .tt-menu,
+.input-group.input-group-lg span.twitter-typeahead .tt-dropdown-menu {
+  top: 46px !important;
+}
+
+/* Sale */
+/* line 286, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+.invoice-title h2, .invoice-title h3 {
+  display: inline-block;
+}
+
+/* line 290, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+.table > tbody > tr > .no-line {
+  border-top: none;
+}
+
+/* line 294, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+.table > thead > tr > .no-line {
+  border-bottom: none;
+}
+
+/* line 298, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/dashboard.scss */
+.table > tbody > tr > .thick-line {
+  border-top: 2px solid;
+}
+/* line 1, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/scaffolds.scss */
+body {
+  background-color: #fff;
+  color: #333;
+  margin: 33px;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 10, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/scaffolds.scss */
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 16, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/scaffolds.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 22, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/scaffolds.scss */
+a {
+  color: #000;
+}
+/* line 25, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/scaffolds.scss */
+a:visited {
+  color: #666;
+}
+/* line 29, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/scaffolds.scss */
+a:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+/* line 35, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/scaffolds.scss */
+th {
+  padding-bottom: 5px;
+}
+
+/* line 39, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/scaffolds.scss */
+td {
+  padding: 0 5px 7px;
+}
+
+/* line 44, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/scaffolds.scss */
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+/* line 49, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/scaffolds.scss */
+#notice {
+  color: green;
+}
+
+/* line 53, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/scaffolds.scss */
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* line 59, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/scaffolds.scss */
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px 7px 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+/* line 66, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/scaffolds.scss */
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px -7px 0;
+  background-color: #c00;
+  color: #fff;
+}
+/* line 76, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/scaffolds.scss */
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+/* line 82, /home/javier/Documentos/Proyectos/SanatorioFamiliar/app/assets/stylesheets/scaffolds.scss */
+label {
+  display: block;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
