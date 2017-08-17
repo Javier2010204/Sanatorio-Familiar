@@ -1,0 +1,101 @@
+<div class="container-fluid">
+ <div class="row">
+  <div class="panel-body">
+   <%= form_for(item) do |form| %>
+  <% if item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+      <ul>
+      <% item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="form-group">
+  <div class="field">
+    <%= form.text_field :code, autofocus: true, placeholder: "Codigo", class: "form-control" %>
+  </div>
+
+    <div class="field">
+    <%= form.text_field :name, autofocus: true, placeholder: "Nombre", class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.text_field :description, autofocus: true, placeholder: "descripcion...", class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.collection_select :brand_id, @brands, :id, :name,
+                  {selected: @item.brand_id, include_blank: 'Seleccione Casa Medica'}, 
+                  {class: "form-control"} %>
+  </div>
+
+  <div class="field">
+    <%= form.collection_select :unit_id, @units, :id, :name,
+                  {selected: @item.unit_id, include_blank: 'Seleccione la presentacion'}, 
+                  {class: "form-control"} %>
+  </div>
+
+  <div class="field">
+    <%= form.collection_select :category_id, @categories, :id, :name,
+                  {selected: @item.category_id, include_blank: 'Seleccione Categoría'}, 
+                  {class: "form-control"} %>
+  </div>
+
+  <div class="form-group">
+    <%= form.number_field :stock, autofocus: true, placeholder: "Unidades", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.number_field :min_stock, autofocus: true, placeholder: "Minimo de unidades", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.text_field :sale_price, autofocus: true, placeholder: "Precio de venta", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.text_field :unit_price, autofocus: true, placeholder: "Precio unitario", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.text_field :cost_price, autofocus: true, placeholder: "Precio de costo", class: "form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Guardar", class:"btn btn-success"%>
+  </div>
+</div>
+  
+<% end %>
+
+  </div>
+ </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
