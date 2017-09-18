@@ -1,0 +1,63 @@
+<div class="container-fluid">
+ <div class="row">
+  <div class="panel-body">
+   <%= form_with(model: patient, local: true) do |form| %>
+  <div class="field">
+    <%= form.text_field :name, id: :patient_name, placeholder: "Nombres", class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.text_field :last_name, id: :patient_last_name, placeholder: "Apellidos", class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Fecha de nacimiento" %>
+    <%= form.date_select :birthdate, id: :patient_birthdate,class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.text_field :phone, id: :patient_phone, placeholder: "Telefono" ,class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.text_field :address, id: :patient_address, placeholder: "Direccion" ,class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.email_field :email, id: :patient_email, placeholder: "Correo electronico" ,class: "form-control" %>
+  </div>
+
+    <div class="field">
+    <%= form.text_field :dpi, id: :patient_dpi, placeholder: "DPI" ,class: "form-control" %>
+  </div>
+
+    <div class="field">
+    <%= form.text_field :nit, id: :patient_nit, placeholder: "Nit" ,class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.text_area :allergies, id: :patient_allergies, placeholder: "Alergias del paciente",class: "form-control" %>
+  </div>
+
+    <div class="field">
+    <%= form.label :sex %>
+    <%= form.radio_button :sex,1,:checked => true%>
+    <span>femenino</span>
+    <%= form.radio_button :sex,2,:checked => true%>
+    <span>masculino</span>
+  </div>
+
+  <div class="field">
+   <%= form.text_area :manager, id: :patient_manager, placeholder: "Encargado",class: "form-control" %>
+  </div>
+  
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+  </div>
+ </div>
+</div>
+
+

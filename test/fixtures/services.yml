@@ -1,0 +1,29 @@
+# == Schema Information
+#
+# Table name: services
+#
+#  id          :integer          not null, primary key
+#  code        :string
+#  name        :string
+#  price       :decimal(8, 2)
+#  category_id :integer
+#  description :text
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  code: MyString
+  name: MyString
+  price: 9.99
+  category: one
+  description: MyText
+
+two:
+  code: MyString
+  name: MyString
+  price: 9.99
+  category: two
+  description: MyText

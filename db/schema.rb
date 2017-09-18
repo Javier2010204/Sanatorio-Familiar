@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170818160956) do
+ActiveRecord::Schema.define(version: 20170831154212) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,9 +45,76 @@ ActiveRecord::Schema.define(version: 20170818160956) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
+    t.date "due_date"
+    t.decimal "begin_balance", precision: 8, scale: 2
     t.index ["brand_id"], name: "index_items_on_brand_id"
     t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["unit_id"], name: "index_items_on_unit_id"
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.string "title"
+    t.text "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "patients", force: :cascade do |t|
+    t.string "code"
+    t.string "name"
+    t.string "last_name"
+    t.date "birthdate"
+    t.string "phone"
+    t.text "allergies"
+    t.string "manager"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "sex"
+    t.string "status"
+    t.string "email"
+    t.string "dpi"
+    t.string "nit"
+  end
+
+  create_table "purchases", force: :cascade do |t|
+    t.integer "number"
+    t.date "date"
+    t.decimal "price", precision: 8, scale: 2
+    t.integer "quantity"
+    t.bigint "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_purchases_on_item_id"
+  end
+
+  create_table "sale_details", force: :cascade do |t|
+    t.string "name_item"
+    t.integer "qty"
+    t.decimal "subtotal", precision: 8, scale: 2
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "sale_id"
+    t.index ["sale_id"], name: "index_sale_details_on_sale_id"
+  end
+
+  create_table "sales", force: :cascade do |t|
+    t.integer "number"
+    t.date "date"
+    t.bigint "patient_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["patient_id"], name: "index_sales_on_patient_id"
+  end
+
+  create_table "services", force: :cascade do |t|
+    t.string "code"
+    t.string "name"
+    t.decimal "price", precision: 8, scale: 2
+    t.bigint "category_id"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_services_on_category_id"
   end
 
   create_table "units", force: :cascade do |t|
@@ -76,4 +143,8 @@ ActiveRecord::Schema.define(version: 20170818160956) do
   add_foreign_key "items", "brands"
   add_foreign_key "items", "categories"
   add_foreign_key "items", "units"
+  add_foreign_key "purchases", "items"
+  add_foreign_key "sale_details", "sales"
+  add_foreign_key "sales", "patients"
+  add_foreign_key "services", "categories"
 end

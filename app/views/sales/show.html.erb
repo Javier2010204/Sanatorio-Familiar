@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Numero:</strong>
+  <%= @sale.number %>
+</p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @sale.date %>
+</p>
+<% if @sale.patient.manager == ""%>
+<p>
+  <strong>Nombre:</strong>
+  <%= @sale.patient.name%>
+</p>
+<% else%>
+    <strong>Nombre:</strong>
+  <%= @sale.patient.manager%>
+<% end %>
+<p>
+  <strong>NIt:</strong>
+  <%= @sale.patient.nit %>
+</p>
+
+  <div>
+    <%= render "sale_details/form"%>
+    <h3>Detalle</h3>
+    <ul>
+     <table>
+            <thead>
+              <tr>
+                <th>Medicamento</th>
+                <th>Cantidad</th>
+                <th>precio</th>
+              </tr>
+            </thead>
+      <% @sale.sale_details.each do |detail|%>
+            <tbody>
+              <tr>
+                <td><%= detail.name_item%></td>
+                <td><%= detail.qty %></td>
+                <td><%= detail.subtotal%></td>
+              </tr>
+      <%end%>
+                <tr>
+                  <td><strong>total</strong></td>
+                  <td>Q<%= @sale.total %></td>
+                  </tr>
+                  </tbody>
+          </table>
+    </ul>
+  </div>
+
+
+<%= link_to 'Edit', edit_sale_path(@sale) %> |
+<%= link_to 'Back', sales_path %>

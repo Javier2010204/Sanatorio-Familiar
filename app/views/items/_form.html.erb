@@ -44,6 +44,11 @@
                   {class: "form-control"} %>
   </div>
 
+    <div class="field">
+    <%= form.label "Fecha de vencimiento", class:"form-control"%>
+    <%= form.text_field :due_date, autofocus: true, placeholder: "Fecha de vencimiento dia-mes-a;o", class: "form-control" %>
+  </div>
+
   <div class="form-group">
     <%= form.number_field :stock, autofocus: true, placeholder: "Unidades", class: "form-control" %>
   </div>
@@ -62,6 +67,10 @@
 
   <div class="form-group">
     <%= form.text_field :cost_price, autofocus: true, placeholder: "Precio de costo", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.text_field :begin_balance, autofocus: true, placeholder: "Saldo inicial", class: "form-control" %>
   </div>
 
   <div class="actions">

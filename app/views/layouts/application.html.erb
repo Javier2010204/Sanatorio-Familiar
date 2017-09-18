@@ -1,39 +1,57 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Sanatorio</title>
+ <head>
+    <title>Medicos</title>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-cyan.min.css" /> 
+     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
  <body>
-  <%= render 'layouts/topbar' %>
-
-  <% if user_signed_in? %>
-   <div class="container-fluid">
-    <div class="row">
-     <%= render 'layouts/sidebar' %>
-
-     <div class="main">
-      <%= render 'layouts/alerts' %>
- 
-      <%= yield %>
-     </div>
+      <div class="demo-layout-waterfall mdl-layout mdl-js-layout">
+    <header class="mdl-layout__header mdl-layout__header--waterfall">
+    <!-- Top row, always visible -->
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">Title</span>
+      <div class="mdl-layout-spacer"></div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+                  mdl-textfield--floating-label mdl-textfield--align-right">
+        <label class="mdl-button mdl-js-button mdl-button--icon"
+               for="waterfall-exp">
+          <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" name="sample"
+                 id="waterfall-exp">
+        </div>
+      </div>
     </div>
-   </div>
-  <% else %>
-   <br>
-   <div class="row">
-    <div class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4">
-     <%= render 'layouts/alerts' %>
+    <!-- Bottom row, not visible on scroll -->
+    <div class="mdl-layout__header-row">
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation -->
+      <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+      </nav>
     </div>
-   </div>
- 
-   <%= yield %>
-  <% end %>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Title</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="">Link</a>
+      <a class="mdl-navigation__link" href="">Link</a>
+      <a class="mdl-navigation__link" href="">Link</a>
+    </nav>
+  </div>
+    <main class="mdl-layout__content">
+          <div class="page-content"><%= yield %></div>
+      </main>
+    </div>
  </body>
 </html>

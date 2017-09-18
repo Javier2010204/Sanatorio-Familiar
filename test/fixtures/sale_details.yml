@@ -1,0 +1,24 @@
+# == Schema Information
+#
+# Table name: sale_details
+#
+#  id         :integer          not null, primary key
+#  name_item  :string
+#  qty        :integer
+#  subtotal   :decimal(8, 2)
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  sale_id    :integer
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name_item: MyString
+  qty: 1
+  subtotal: 9.99
+
+two:
+  name_item: MyString
+  qty: 1
+  subtotal: 9.99

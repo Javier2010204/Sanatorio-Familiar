@@ -19,9 +19,15 @@
          </li>
        <% end %>
      </ul>
-   <form class="navbar-form navbar-right">
-     <input type="text" class="form-control" placeholder="Buscar...">
-   </form>
+     <div id="resultados">
+       
+     </div>
+    <%= form_tag "/search/create", method: :get, id: "search-form", class: "navbar-form navbar-right" do%>
+        <%= text_field_tag :keyword, nil, placeholder: "Buscar paciente..."%>
+        <%= content_tag :button, type: :submit , class: "btn btn-primary" do%>
+          buscar
+        <%end%>
+   <%end%>
   </div>
  </div>
 </nav>

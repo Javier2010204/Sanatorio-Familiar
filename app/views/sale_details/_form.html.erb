@@ -1,0 +1,21 @@
+<%= form_for([@sale,@sale_detail]) do |form|%>
+
+  <div class="field">
+    <%= form.label "Medicametno" %>
+    <%= form.text_field :name_item, id: :sale_detail_name_item %>
+  </div>
+
+  <div class="field">
+    <%= form.label "cantidad" %>
+    <%= form.number_field :qty, id: :sale_detail_qty %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Precio" %>
+    <%= form.text_field :subtotal, id: :sale_detail_subtotal %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

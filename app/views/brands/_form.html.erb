@@ -15,18 +15,10 @@
     <% end %>
 
     <div class="form-group">
-      <div class="field">
-        <%= f.text_field :name, autofocus: true, placeholder: "Nombre", class: "form-control" %>
-      </div>
-        <div class="field">
-        <%= f.text_field :address, autofocus: true, placeholder: "Direccion", class: "form-control" %>
-      </div>
-      <div class="field">
-        <%= f.text_field :phone, autofocus: true, placeholder: "Telefono", class: "form-control" %>
-      </div>
-      <div class="field">
-        <%= f.text_field :contact, autofocus: true, placeholder: "Contacto", class: "form-control" %>
-      </div>
+     <%= f.text_field :name, autofocus: true, placeholder: "Nombre", class: "form-control" %>
+     <%= f.text_field :address, autofocus: true, placeholder: "Direccion", class: "form-control" %>
+     <%= f.text_field :phone, autofocus: true, placeholder: "Telefono", class: "form-control" %>
+     <%= f.text_field :contact, autofocus: true, placeholder: "Contacto", class: "form-control" %>
     </div>
 
     <%= f.submit "Aceptar", class: "btn btn-success" %>
