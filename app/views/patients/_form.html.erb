@@ -1,0 +1,152 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="panel-body">
+			<%= form_for(patient) do |f| %>
+				<% if patient.errors.any? %>
+					<div id="error_explanation">
+						<h2><%= pluralize(patient.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+						<ul>
+						<% patient.errors.full_messages.each do |message| %>
+							<li><%= message %></li>
+						<% end %>
+						</ul>
+					</div>
+				<% end %>
+
+				<div class="form-group row">
+					<div class="col-xs-2">
+						<%= f.label :code, "Código" %>
+					</div>
+					<div class="col-xs-10">
+						<%= f.text_field :code, autofocus: true, placeholder: "Código", class: "form-control" %>
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<div class="col-xs-2">
+						<%= f.label :first_name, "Nombres" %>
+					</div>
+					<div class="col-xs-10">
+						<%= f.text_field :first_name, placeholder: "Nombres", class: "form-control" %>
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<div class="col-xs-2">
+						<%= f.label :last_name, "Apellidos" %>
+					</div>
+					<div class="col-xs-10">
+						<%= f.text_field :last_name, placeholder: "Apellidos", class: "form-control" %>
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<div class="col-xs-2">
+						<%= f.label :birthday, "Fecha de nacimiento" %>
+					</div>
+					<div class="col-xs-10">
+						<%= f.text_field :birthday, placeholder: "Fecha de nacimiento", class: "form-control" %>
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<div class="col-xs-2">
+						<%= f.label :age, "Edad" %>
+					</div>
+					<div class="col-xs-10">
+						<%= f.number_field :age, placeholder: "Edad", class: "form-control" %>
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<div class="col-xs-2">
+						<%= f.label :phone, "Telefono" %>
+					</div>
+					<div class="col-xs-10">
+						<%= f.text_field :phone, placeholder: "Telefono", class: "form-control" %>
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<div class="col-xs-2">
+						<%= f.label :email, "Email" %>
+					</div>
+					<div class="col-xs-10">
+						<%= f.text_field :email, placeholder: "Correo electronico", class: "form-control" %>
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<div class="col-xs-2">
+						<%= f.label :dpi, "DPI" %>
+					</div>
+					<div class="col-xs-10">
+						<%= f.text_field :dpi, placeholder: "DPI", class: "form-control" %>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label>Sexo</label>
+					<div class="radio">
+						<label for="option1">Femenino
+							<%= f.radio_button :sex, "Femenino", :checked => true, id: "option1" %>
+						</label>
+						<label for="option2">Masculino 
+							<%= f.radio_button :sex, "Masculino", :checked => true, id: "option2" %>
+						</label>			
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<div class="col-xs-2">
+						<%= f.label :manager, "Encargado" %>
+					</div>
+					<div class="col-xs-10">
+						<%= f.text_field :manager, placeholder: "Encargado", class: "form-control" %>
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<div class="col-xs-2">
+						<%= f.label :nit, "numero de nit" %>
+					</div>
+					<div class="col-xs-10">
+						<%= f.text_field :nit, placeholder: "Nit", class: "form-control" %>
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<div class="col-xs-2">
+						<%= f.label :alegies, "Alergias" %>
+					</div>
+					<div class="col-xs-10">
+						<%= f.text_area :alergies, placeholder: "Alergias", class: "form-control" %>
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<div class="col-xs-2">
+						<%= f.label :annotations, "Anotaciones" %>
+					</div>
+					<div class="col-xs-10">
+						<%= f.text_area :annotations, placeholder: "Anotaciones", class: "form-control" %>
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<div class="col-xs-2">
+						<%= f.label :room_id, "Habitacion asignada" %>
+					</div>
+					<div class="col-xs-10">
+						<%= f.collection_select :room_id, @rooms, :id, :name, 
+									{selected: @patient.room_id, include_blank: 'Seleccione una habitacion'},
+									{class: "form-control"} %>
+					</div>
+				</div>
+				
+				<%= f.submit "Aceptar", class: "btn btn-success" %>
+			<% end %>
+		</div>
+	</div>
+</div>

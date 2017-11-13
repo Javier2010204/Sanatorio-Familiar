@@ -1,0 +1,41 @@
+<div class="container-fluid">
+ <div class="row">
+	<div class="panel-body">
+	 <%= form_for(brand) do |f| %>
+		<% if brand.errors.any? %>
+		 <div id="error_explanation">
+			<h2><%= pluralize(brand.errors.count, "error") %> prohibited this brand from being saved:</h2>
+
+			<ul>
+			 <% brand.errors.full_messages.each do |message| %>
+				<li><%= message %></li>
+			 <% end %>
+			</ul>
+		 </div>
+		<% end %>
+
+		<div class="form-group">
+		 <%= f.text_field :name, autofocus: true, placeholder: "Nombre de la Marca", class: "form-control" %>
+		</div>
+
+		<div class="form-group">
+		 <%= f.text_field :contact, autofocus: true, placeholder: "Nombre del contacto", class: "form-control" %>
+		</div>
+
+		<div class="form-group">
+		 <%= f.text_field :phone, autofocus: true, placeholder: "Telefono", class: "form-control" %>
+		</div>
+
+		<div class="form-group">
+		 <%= f.email_field :email, autofocus: true, placeholder: "Email", class: "form-control" %>
+		</div>
+
+		<div class="form-group">
+		 <%= f.text_field :address, autofocus: true, placeholder: "Direccion", class: "form-control" %>
+		</div>
+
+		<%= f.submit "Aceptar", class: "btn btn-success" %>
+	 <% end %>
+	</div>
+ </div>
+</div>

@@ -1,0 +1,2 @@
+module ValidatesSuggestedBrandHelper
+end

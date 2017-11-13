@@ -1,0 +1,2 @@
+module BrandSuggestionHelper
+end
