@@ -35,6 +35,7 @@ gem 'annotate'
 gem 'bower-rails' 
 gem 'jquery-rails'
 gem 'cocoon'
+gem 'aasm'
 # Modal
 gem 'bootstrap-modal-rails'
 # Use Capistrano for deployment

@@ -52,6 +52,30 @@
 						</div>
 					</div>
 				</div>
+				<div class="row text-center">
+					<div class="col-xs-12 col-sm-10">
+						<div class="form-group row">
+							<div class="col-xs-2">
+								<%= f.label :nit, "Nit" %>
+							</div>
+							<div class="col-xs-10">
+            							<%= f.text_field :nit, placeholder: 'numero de nit', class: 'form-control' %>
+         						 </div>
+						</div>
+					</div>
+				</div>
+				<div class="row text-center">
+					<div class="col-xs-12 col-sm-10">
+						<div class="form-group row">
+							<div class="col-xs-2">
+								<%= f.label :client, "Factura a nombre de: " %>
+							</div>
+							<div class="col-xs-10">
+            							<%= f.text_field :client, placeholder: 'nombre de la persona a facturar ', class: 'form-control' %>
+         						 </div>
+						</div>
+					</div>
+				</div>
 				<hr>
 				<br>
 				<div class="panel-body" id="sale-details">

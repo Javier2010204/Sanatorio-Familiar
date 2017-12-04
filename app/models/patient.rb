@@ -24,6 +24,8 @@
 
 class Patient < ApplicationRecord
 
+	include AASM
+
 	has_many :sales
 
 	validates :first_name, presence: true
@@ -31,4 +33,24 @@ class Patient < ApplicationRecord
 	validates :birthday, presence: true
 	validates :age, presence: true
 	validates :sex, presence: true
+
+	def set_patient_code
+		self.update(code: self.sex.to_s + "00" + self.id.to_s + "17")
+		#Date.current.year 		
+	end
+
+	aasm column: "status" do
+		state :active, initial: true
+		state :inactive
+
+		event :activated do
+			transitions from: :inactive, to: :active
+		end
+
+		event :deactivated do 
+			transitions from: :active, to: :inactive
+		end
+	end
+
+
 end

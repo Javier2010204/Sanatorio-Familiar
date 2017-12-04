@@ -16,6 +16,9 @@ Rails.application.routes.draw do
 	resources :categories
 	resources :brands
 
+	put "/patients/:id/baja", to: "patients#baja"
+ 	put "/patients/:id/alta", to: "patients#alta"
+
 	#get 'validate_suggested_brand/index'
 	get '/brands_suggestion', to: 'brands_suggestion#index'
 	get '/validate_suggested_brand', to: 'validate_suggested_brand#index'

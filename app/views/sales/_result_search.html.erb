@@ -6,6 +6,7 @@
 		<tr>
 			<th></th>
 			<th>Número</th>
+			<th>Nombre</th>
 			<th>Fecha</th>
 			<th>Total</th>
 			<th colspan="2"></th>
@@ -21,6 +22,7 @@
 					<% end %>
 				</td>
 				<td><%= sale.number %></td>
+				<td><%= sale.patient.first_name %> <%= sale.patient.last_name %></td>
 				<td><%= sale.date.strftime("%d/%m/%Y") %></td>
 				<td><%= number_to_currency(sale.total) %></td>
 				<td>

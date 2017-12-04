@@ -1,5 +1,5 @@
 class PatientsController < ApplicationController
-  before_action :set_patient, only: [:show, :edit, :update, :destroy]
+  before_action :set_patient, only: [:show, :edit, :update, :destroy, :baja, :alta]
   before_action :set_combo_values, only: [:new, :edit]
 
   # GET /patients
@@ -35,6 +35,7 @@ class PatientsController < ApplicationController
 
     respond_to do |format|
       if @patient.save
+        @patient.set_patient_code
         format.html { redirect_to @patient, notice: 'Patient was successfully created.' }
         format.json { render :show, status: :created, location: @patient }
       else
@@ -66,6 +67,18 @@ class PatientsController < ApplicationController
       format.html { redirect_to patients_url, notice: 'Patient was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+    def baja
+    @patient.deactivated!
+    #llevarlo a facturacion
+    redirect_to patient_path
+  end
+
+  def alta
+    @patient.activated!
+    #llevarlo a facturacion
+    redirect_to patient_path
   end
 
   private
